@@ -74,6 +74,7 @@ data Extension =
     | Ext_escaped_line_breaks     -- ^ Treat a backslash at EOL as linebreak
     | Ext_example_lists       -- ^ Markdown-style numbered examples
     | Ext_fancy_lists         -- ^ Enable fancy list numbers and delimiters
+    | Ext_star_bullets        -- ^ Use * for bullet lists instead of -
     | Ext_fenced_code_attributes  -- ^ Allow attributes on fenced code blocks
     | Ext_fenced_code_blocks  -- ^ Parse fenced code blocks
     | Ext_fenced_divs             -- ^ Allow fenced div syntax :::
@@ -462,6 +463,7 @@ getAllExtensions f = universalExtensions <> getAll f
        , Ext_tex_math_single_backslash
        , Ext_tex_math_double_backslash
        , Ext_markdown_attribute
+       , Ext_star_bullets
        , Ext_mmd_title_block
        , Ext_abbreviations
        , Ext_autolink_bare_uris
@@ -519,6 +521,7 @@ getAllExtensions f = universalExtensions <> getAll f
     , Ext_definition_lists
     , Ext_footnotes
     , Ext_fancy_lists
+    , Ext_star_bullets
     , Ext_fenced_divs
     , Ext_bracketed_spans
     , Ext_raw_attribute
